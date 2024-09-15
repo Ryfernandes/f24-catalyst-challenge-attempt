@@ -22,7 +22,12 @@ const todoList = [];
  * 
  */
 function addAndPrintTodos() {
-    // YOUR CODE HERE
+    console.log("\n-- To Do 9/15 --\n")
+    todoList.push("Apply to y/cs!", "Pick out my classes", "Have dinner with my suite");
+    for(let i = 0; i < todoList.length; i++) {
+        console.log(`${i+1}. ${todoList[i]}`);
+    }
+    console.log();
 }
 
 /**

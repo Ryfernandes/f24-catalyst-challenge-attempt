@@ -61,8 +61,10 @@
             const todoInput = document.getElementById('todo-input');
             const createdTodo = todoInput.value.trim();
             
-            // Add non-empty string todos to the todo list
-            // YOUR CODE HERE 
+            // Add non-empty string todos to the todo list via the SoC function
+            if(createdTodo.length > 0) {
+                addTodo(createdTodo)
+            }
 
             // reset the input value after add todo is clicked.
             todoInput.value = '';
@@ -70,7 +72,7 @@
         
         // This re-renders the list of items displayed on the webpage based on the new todoList
         function refreshTodoList() {
-            
+            console.log("refreshing");
             // BE ABLE TO EXPLAIN what document.getByElementID() does in this context
             const todoListElement = document.getElementById('todo-list');
             todoListElement.innerHTML = '';
@@ -89,12 +91,14 @@
         }
 
         function deleteTodo(index) {
-            // YOUR CODE HERE (recycle your work from former tasks)
+            //Delete the item at the specified index
+            todoList.splice(index, 1);
             refreshTodoList()
         }
 
         function addTodo(todo) {
-            // YOUR CODE HERE (recycle your work from former tasks)
+            //Adds todoString to the list
+            todoList.push(todo);
             refreshTodoList()
         }
     </script>

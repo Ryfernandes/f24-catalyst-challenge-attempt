@@ -21,9 +21,21 @@ const todoList = [];
  * 3. Have dinner with my suite
  * 
  */
+
+//Function to format and return a date string in the format "Month #/Day"
+function dateString(today) {
+    //I figured out how to use these formatted strings by looking on google because I know how to do them in Python and assumed there was something similar for js
+    return `${today.getMonth() + 1}/${today.getDate()}`;
+}
+
 function addAndPrintTodos() {
-    console.log("\n-- To Do 9/15 --\n")
+    //Adds tasks to to-do list
     todoList.push("Apply to y/cs!", "Pick out my classes", "Have dinner with my suite");
+
+    //Prints header (I found info about the Java Date object here (I thought it would be cool): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+    console.log(`\n-- To Do ${dateString(new Date())} --\n`);
+
+    //Iterates through each task and prints it with the number before it
     for(let i = 0; i < todoList.length; i++) {
         console.log(`${i+1}. ${todoList[i]}`);
     }
